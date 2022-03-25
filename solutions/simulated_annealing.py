@@ -19,4 +19,5 @@ def simulated_annealing(problem, settings):
         es = problem.cost(s); en = problem.cost(n);
         if acceptance_probability(es, en, T) > settings.rng.random():
             s = n
-        print(es, s, T, ki)
+        # print(es, s, T, ki)
+    return s
