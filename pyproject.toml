@@ -10,6 +10,7 @@ python = ">=3.9,<3.10"
 numpy = "^1.22.3"
 plotly = "^5.6.0"
 pandas = "^1.4.1"
+settings = {git = "https://github.com/LSaldyt/settings.git", rev = "main"}
 
 [tool.poetry.dev-dependencies]
 

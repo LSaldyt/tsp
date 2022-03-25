@@ -58,6 +58,21 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "settings"
+version = "0.1.0"
+description = "A simple settings class"
+category = "main"
+optional = false
+python-versions = ">=3.9,<3.10"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/LSaldyt/settings.git"
+reference = "main"
+resolved_reference = "6df5226026474cbaa398b84074f4edfb450398a9"
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -79,7 +94,7 @@ doc = ["reno", "sphinx", "tornado (>=4.5)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.10"
-content-hash = "f283c8df1fe7e7881aed9592ee80dc0690e11c4bd460cd2c7f27cd14df460012"
+content-hash = "a60fa881325b7e81de27d2b2bc73340de347e620299c83590ba097f6aa056f01"
 
 [metadata.files]
 numpy = [
@@ -139,6 +154,7 @@ pytz = [
     {file = "pytz-2022.1-py2.py3-none-any.whl", hash = "sha256:e68985985296d9a66a881eb3193b0906246245294a881e7c8afe623866ac6a5c"},
     {file = "pytz-2022.1.tar.gz", hash = "sha256:1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7"},
 ]
+settings = []
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
