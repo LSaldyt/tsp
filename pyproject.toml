@@ -12,6 +12,7 @@ plotly = "^5.6.0"
 pandas = "^1.4.1"
 settings = {git = "https://github.com/LSaldyt/settings.git", rev = "main"}
 python-tsp = "^0.2.1"
+psutil = "^5.9.0"
 
 [tool.poetry.dev-dependencies]
 
