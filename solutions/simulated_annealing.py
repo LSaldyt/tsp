@@ -1,30 +1,22 @@
 import numpy as np
 
-def neighbor(s, settings, T):
-    return s + settings.rng.normal(loc=0, scale=np.abs(T))
-
 def temperature(T, settings, t):
-    return T * settings.alpha**t
+    return T * settings.alpha**t # Exponential decay
 
-def initial(settings):
-    return settings.rng.random() * 20. - 10. # -10., 10.
-
-def E(s):
-    return s**2
-
-def P(es, en, T):
+def acceptance_probability(es, en, T):
     if en < es:
         return 1.
     else:
         return np.exp(-(en - es) / T) # Kirkpatrick et. al, MH
 
 def simulated_annealing(problem, settings):
-    print('Simulated annealing!', flush=True)
-    s = initial(settings)
+    # TODO vectorize for n solutions w/ different hyperparameters at once
+    s = problem.initial(settings.rng)
     T = 1. # Whatever, let's see what happens
     for ki in range(settings.k):
         T = temperature(T, settings, 1 - (ki + 1) / settings.k)
-        n = neighbor(s, settings, T)
-        if P(E(s), E(n), T) > settings.rng.random():
+        n = problem.neighbor(s, settings, T)
+        es = problem.cost(s); en = problem.cost(n);
+        if acceptance_probability(es, en, T) > settings.rng.random():
             s = n
-        print(E(s), s, T, ki)
+        print(es, s, T, ki)

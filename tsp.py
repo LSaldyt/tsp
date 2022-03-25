@@ -17,3 +17,21 @@ class Problem:
                                                   points[i][1] - points[j][1])
                                          / normalize)
         return distance_matrix
+
+    def cost(self, ordering):
+        assert len(ordering) > 1, 'Distance for 0 or 1 cities is nonsensical'
+        total = 0. # Could vectorize w/ clever summation perhaps
+        for i, j in zip(ordering[1:], ordering[:-1]):
+            total += self.distance_matrix[i, j]
+        return total
+
+    def initial(self, rng):
+        ordering = np.arange(self.n_cities)
+        rng.shuffle(ordering)
+        return ordering
+
+    def neighbor(self, old_ordering, settings, T):
+        indices = settings.rng.choice(self.n_cities, size=(2,), replace=False)
+        ordering = old_ordering.copy()
+        ordering[np.flip(indices)] = ordering[indices]
+        return ordering
