@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tsp"
+version = "0.0.0"
+description = "Simple Travelling Salesman Problem implementations, using classical approaches such as simulated annealing. Use both for class projects in CSE 598: Bio-inspired AI and in my Ph.D. research"
+authors = ["LSaldyt <lucassaldyt@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+numpy = "^1.22.3"
+plotly = "^5.6.0"
+pandas = "^1.4.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
